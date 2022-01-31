@@ -1,0 +1,97 @@
+{
+	"info": {
+		"_postman_id": "1660ae9c-d897-417e-aced-0fb11af58c35",
+		"name": "CustomerDocument",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GetDocuments for CustomerId",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/customer/5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"customer",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Document",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"Manoj22\",\r\n    \"address\":\"Bangalore\",\r\n    \"contact\": \"0123456789\",\r\n    \"documents\" : [ \r\n        {\r\n            \"type\":\"pdf\",\r\n            \"resolution\" : \"high\",\r\n            \"size\": 1133,\r\n            \"name\": \"testmanoj1\",\r\n            \"category\": \"address proof\"\r\n\r\n    }, {\r\n            \"type\":\"xls\",\r\n            \"resolution\" : \"high\",\r\n            \"size\": 8754,\r\n            \"name\": \"testmanoj2\",\r\n            \"category\": \"tax calculation\"\r\n\r\n    } ,{\r\n            \"type\":\"word\",\r\n            \"resolution\" : \"high\",\r\n            \"size\": 21313,\r\n            \"name\": \"testmanoj3\",\r\n            \"category\": \"details\"\r\n\r\n    }\r\n ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/document",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"document"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetDocuments For DocumentId",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/document/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"document",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetAll",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/document/all",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"document",
+						"all"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
