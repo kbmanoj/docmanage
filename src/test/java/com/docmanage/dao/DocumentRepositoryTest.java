@@ -33,9 +33,8 @@ public class DocumentRepositoryTest {
 		populateData();
 		Document dbDocument = documentRepository.findById(1L).get();
 		assertThat(dbDocument.getName()).isEqualTo("testdoc");
-		
-		customerRepository.deleteAll();
-		assertThat(documentRepository.findAll()).isEmpty();	
+		assertThat(dbDocument.getResolution()).isEqualTo("high");
+		assertThat(dbDocument.getCategory()).isEqualTo("testcategory");
 	}
 	
 	public void populateData() {

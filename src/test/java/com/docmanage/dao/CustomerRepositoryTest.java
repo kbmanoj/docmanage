@@ -11,6 +11,7 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.context.annotation.PropertySource;
+import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
@@ -21,6 +22,7 @@ import com.docmanage.model.Document;
 @DataJpaTest
 @ActiveProfiles("test")
 @PropertySource("classpath:application-test.properties")
+@DirtiesContext(classMode = DirtiesContext.ClassMode.AFTER_EACH_TEST_METHOD)
 public class CustomerRepositoryTest {
 
 	@Autowired
@@ -43,9 +45,8 @@ public class CustomerRepositoryTest {
 	
 	@Test
 	public void testAllCustomerDocumentById() {
-		Customer customer = customerRepository.findById(2L).get();
-		assertThat(customer.getAddress()).isEqualTo("Nottingham");
-		
+		Customer customer = customerRepository.findById(1L).get();
+		assertThat(customer.getAddress()).isEqualTo("Nottingham");	
 	}
 
 	private Customer populateCustomer() {
