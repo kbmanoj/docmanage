@@ -29,7 +29,7 @@ public class DocumentRepositoryTest {
 	private CustomerRepository customerRepository;
 	
 	@Test
-	public void testgetDocument() {
+	public void testGetDocument() {
 		populateData();
 		Document dbDocument = documentRepository.findById(1L).get();
 		assertThat(dbDocument.getName()).isEqualTo("testdoc");

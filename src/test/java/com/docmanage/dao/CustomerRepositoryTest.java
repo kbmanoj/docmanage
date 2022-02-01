@@ -33,7 +33,7 @@ public class CustomerRepositoryTest {
 	}
 	
 	@Test
-	public void testaddDocument() {
+	public void testAddDocument() {
 		Iterable<Customer> customers = customerRepository.findAll();
 		assertThat(customers).flatExtracting(Customer::getName).contains("Manoj");
 		
@@ -43,7 +43,7 @@ public class CustomerRepositoryTest {
 	
 	@Test
 	public void testAllCustomerDocumentById() {
-		Customer customer = customerRepository.findById(1L).get();
+		Customer customer = customerRepository.findById(2L).get();
 		assertThat(customer.getAddress()).isEqualTo("Nottingham");
 		
 	}
